@@ -17,7 +17,8 @@ var DefaultModels = []Model{
 	{ID: "gemini-3-flash-preview", Type: "model", DisplayName: "Gemini 3 Flash Preview", CreatedAt: ""},
 	{ID: "gemini-3-pro-preview", Type: "model", DisplayName: "Gemini 3 Pro Preview", CreatedAt: ""},
 	{ID: "gemini-3.1-pro-preview", Type: "model", DisplayName: "Gemini 3.1 Pro Preview", CreatedAt: ""},
+	{ID: "gemini-3.1-flash-lite", Type: "model", DisplayName: "Gemini 3.1 Flash Lite", CreatedAt: ""},
 }
 
 // DefaultTestModel is the default model to preselect in test flows.
-const DefaultTestModel = "gemini-2.0-flash"
+const DefaultTestModel = "gemini-3.1-flash-lite"
