@@ -72,7 +72,12 @@ func RegisterGatewayRoutes(
 		gateway.POST("/responses/*subpath", h.OpenAIGateway.Responses)
 		gateway.GET("/responses", h.OpenAIGateway.ResponsesWebSocket)
 		// 明确阻止旧协议入口：OpenAI 仅支持 Responses API，避免客户端误解为会自动路由到其它平台。
+		// 但是，如果是 Gemini 平台，支持透传到 Google 的 OpenAI 兼容接口。
 		gateway.POST("/chat/completions", func(c *gin.Context) {
+			if getGroupPlatform(c) == service.PlatformGemini {
+				h.Gateway.GeminiOpenAIChatCompletions(c)
+				return
+			}
 			c.JSON(http.StatusBadRequest, gin.H{
 				"error": gin.H{
 					"type":    "invalid_request_error",
@@ -92,6 +97,7 @@ func RegisterGatewayRoutes(
 	{
 		gemini.GET("/models", h.Gateway.GeminiV1BetaListModels)
 		gemini.GET("/models/:model", h.Gateway.GeminiV1BetaGetModel)
+		gemini.POST("/openai/chat/completions", h.Gateway.GeminiOpenAIChatCompletions)
 		// Gin treats ":" as a param marker, but Gemini uses "{model}:{action}" in the same segment.
 		gemini.POST("/models/*modelAction", h.Gateway.GeminiV1BetaModels)
 	}
