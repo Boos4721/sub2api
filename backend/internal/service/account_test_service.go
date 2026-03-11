@@ -444,13 +444,11 @@ func (s *AccountTestService) testGeminiAccountConnection(c *gin.Context, account
 		testModelID = geminicli.DefaultTestModel
 	}
 
-	// For API Key accounts with model mapping, map the model
-	if account.Type == AccountTypeAPIKey {
-		mapping := account.GetModelMapping()
-		if len(mapping) > 0 {
-			if mappedModel, exists := mapping[testModelID]; exists {
-				testModelID = mappedModel
-			}
+	// For accounts with model mapping, map the model
+	mapping := account.GetModelMapping()
+	if len(mapping) > 0 {
+		if mappedModel, exists := mapping[testModelID]; exists {
+			testModelID = mappedModel
 		}
 	}
 

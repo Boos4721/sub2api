@@ -23,10 +23,7 @@ import (
 func (s *GeminiMessagesCompatService) ForwardOpenAIChat(ctx context.Context, c *gin.Context, account *Account, originalModel string, stream bool, body []byte) (*ForwardResult, error) {
 	startTime := time.Now()
 
-	mappedModel := originalModel
-	if account.Type == AccountTypeAPIKey {
-		mappedModel = account.GetMappedModel(originalModel)
-	}
+	mappedModel := account.GetMappedModel(originalModel)
 
 	proxyURL := ""
 	if account.ProxyID != nil && account.Proxy != nil {
