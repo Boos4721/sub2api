@@ -96,10 +96,12 @@ var DefaultAntigravityModelMapping = map[string]string{
 	"gemini-3-flash-preview": "gemini-3-flash",
 	"gemini-3-pro-preview":   "gemini-3-pro-high",
 	// Gemini 3.1 白名单
-	"gemini-3.1-pro-high": "gemini-3.1-pro-high",
-	"gemini-3.1-pro-low":  "gemini-3.1-pro-low",
+	"gemini-3.1-pro-high":   "gemini-3.1-pro-high",
+	"gemini-3.1-pro-low":    "gemini-3.1-pro-low",
+	"gemini-3.1-flash-lite": "gemini-3.1-flash-lite",
 	// Gemini 3.1 preview 映射
-	"gemini-3.1-pro-preview": "gemini-3.1-pro-high",
+	"gemini-3.1-pro-preview":        "gemini-3.1-pro-high",
+	"gemini-3.1-flash-lite-preview": "gemini-3.1-flash-lite",
 	// Gemini 3.1 image 白名单
 	"gemini-3.1-flash-image": "gemini-3.1-flash-image",
 	// Gemini 3.1 image preview 映射

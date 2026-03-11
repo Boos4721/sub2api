@@ -975,6 +975,23 @@ function generateOpenCodeConfig(platform: string, baseUrl: string, apiKey: strin
           type: 'enabled'
         }
       }
+    },
+    'gemini-3.1-flash-lite': {
+      name: 'Gemini 3.1 Flash Lite Preview',
+      limit: {
+        context: 1048576,
+        output: 65536
+      },
+      modalities: {
+        input: ['text', 'image', 'pdf'],
+        output: ['text']
+      },
+      options: {
+        thinking: {
+          budgetTokens: 24576,
+          type: 'enabled'
+        }
+      }
     }
   }
   const claudeModels = {

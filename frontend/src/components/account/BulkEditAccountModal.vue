@@ -963,6 +963,7 @@ const allModels = [
   { value: 'gemini-2.5-flash', label: 'Gemini 2.5 Flash' },
   { value: 'gemini-2.5-pro', label: 'Gemini 2.5 Pro' },
   { value: 'gemini-3.1-flash-image', label: 'Gemini 3.1 Flash Image' },
+  { value: 'gemini-3.1-flash-lite', label: 'Gemini 3.1 Flash Lite' },
   { value: 'gemini-3-pro-image', label: 'Gemini 3 Pro Image (Legacy)' },
   { value: 'gemini-3-flash-preview', label: 'Gemini 3 Flash Preview' },
   { value: 'gemini-3-pro-preview', label: 'Gemini 3 Pro Preview' }
@@ -1119,6 +1120,12 @@ const presetMappings = [
     from: 'gemini-3-flash',
     to: 'gemini-3-flash',
     color: 'bg-lime-100 text-lime-700 hover:bg-lime-200 dark:bg-lime-900/30 dark:text-lime-400'
+  },
+  {
+    label: '3.1-Flash-Lite透传',
+    from: 'gemini-3.1-flash-lite',
+    to: 'gemini-3.1-flash-lite',
+    color: 'bg-green-100 text-green-700 hover:bg-green-200 dark:bg-green-900/30 dark:text-green-400'
   },
   {
     label: '2.5-Flash-Lite透传',
